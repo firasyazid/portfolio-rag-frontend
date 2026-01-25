@@ -33,20 +33,22 @@ export const ChatPanel = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm"
+                        className="fixed inset-0 z-[55] bg-black/60 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
                         onClick={closePanel}
                     />
                     <motion.div
-                        initial={{ y: 20, opacity: 0, scale: 0.95 }}
+                        initial={{ y: "100%", opacity: 0, scale: 0.95 }}
                         animate={{ y: 0, opacity: 1, scale: 1 }}
-                        exit={{ y: 20, opacity: 0, scale: 0.95 }}
+                        exit={{ y: "100%", opacity: 0, scale: 0.95 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="fixed right-4 bottom-4 top-4 z-[60] w-full max-w-[400px] flex flex-col"
+                        className="fixed z-[60] flex flex-col 
+                            inset-0 w-full h-full 
+                            md:inset-auto md:right-4 md:bottom-4 md:top-auto md:h-[600px] md:max-h-[calc(100vh-2rem)] md:w-[400px]"
                     >
-                        <div className="flex h-full flex-col bg-[#0d1117] border border-white/10 shadow-2xl shadow-black rounded-2xl overflow-hidden">
+                        <div className="flex h-full flex-col bg-[#0d1117] md:border md:border-white/10 md:shadow-2xl md:shadow-black md:rounded-2xl overflow-hidden">
                             <ChatHeader />
                             <ChatMessages />
-                            <div className="p-4 bg-[#0d1117] border-t border-white/5">
+                            <div className="p-4 bg-[#0d1117] border-t border-white/5 pb-8 md:pb-4">
                                 <ChatInput />
                             </div>
                         </div>

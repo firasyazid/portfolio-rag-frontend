@@ -63,6 +63,14 @@ export const ChatService = {
             });
 
             if (!response.ok) {
+                if (response.status === 429) {
+                    yield {
+                        type: "error",
+                        message: "You're sending too many messages. Please wait a moment before trying again."
+                    };
+                    return;
+                }
+
                 yield {
                     type: "error",
                     message: `Server Error: ${response.status} ${response.statusText}`
