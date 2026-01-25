@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
 import Footer from "@/components/Footer";
+import { AskSection } from "@/components/chat";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <AskSection />
       <TechStack />
       <Footer />
 

@@ -9,7 +9,10 @@ export type ChatRequest = z.infer<typeof ChatRequestSchema>;
 export interface Source {
     score: number;
     text: string;
-    metadata: Record<string, any>;
+    source: string;
+    header: string;
+    header_level: string;
+    section_type: string;
 }
 
 export type StreamEventType = "sources" | "chunk" | "done" | "error";
@@ -50,7 +53,7 @@ export const ChatService = {
                 return;
             }
 
-            const response = await fetch(`${API_BASE_URL}/chat/stream`, {
+            const response = await fetch(`${API_BASE_URL}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -89,16 +92,24 @@ export const ChatService = {
                 buffer = lines.pop() || "";
 
                 for (const line of lines) {
-                    if (!line.trim()) continue;
+                    const trimmedLine = line.trim();
+                    if (!trimmedLine) continue;
+
+                    let jsonString = trimmedLine;
+                    if (trimmedLine.startsWith("data:")) {
+                        jsonString = trimmedLine.slice(5).trim();
+                    }
+
+                    if (!jsonString || jsonString === "[DONE]") continue;
 
                     try {
-                        const event = JSON.parse(line) as StreamEvent;
+                        const event = JSON.parse(jsonString) as StreamEvent;
                         yield event;
 
                         if (event.type === "done" || event.type === "error") {
                             if (event.type === "error") return;
                         }
-                    } catch (parseError) {
+                    } catch {
                     }
                 }
             }
