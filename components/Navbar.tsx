@@ -18,7 +18,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full px-8 py-1 flex items-center justify-between z-50 backdrop-blur-sm">
+    <nav className="fixed top-0 w-full px-8 py-1 flex items-center justify-between z-50 backdrop-blur-xs">
       <div className="flex items-center">
         <Image
           src="/logo.png"
