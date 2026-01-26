@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { ChatService, type Source } from "@/app/services/chatService";
 import type { Message, ChatStore } from "@/app/types/chat";
 
@@ -11,6 +11,7 @@ export const useChatStore = (): ChatStore => {
     const [isOpen, setIsOpen] = useState(false);
     const [isStreaming, setIsStreaming] = useState(false);
     const [hasInteracted, setHasInteracted] = useState(false);
+    const updateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const sendMessage = useCallback(async (content: string) => {
         if (!content.trim() || isStreaming) return;
@@ -39,6 +40,23 @@ export const useChatStore = (): ChatStore => {
 
         let accumulatedContent = "";
         let sources: Source[] = [];
+        let chunkBuffer = "";
+
+        const flushBuffer = () => {
+            if (chunkBuffer) {
+                accumulatedContent += chunkBuffer;
+                const contentToUpdate = accumulatedContent;
+                chunkBuffer = "";
+
+                setMessages((prev) =>
+                    prev.map((msg) =>
+                        msg.id === assistantMessageId
+                            ? { ...msg, content: contentToUpdate }
+                            : msg
+                    )
+                );
+            }
+        };
 
         try {
             for await (const event of ChatService.streamChat(content)) {
@@ -47,16 +65,26 @@ export const useChatStore = (): ChatStore => {
                         sources = event.sources;
                         break;
                     case "chunk":
-                        accumulatedContent += event.content;
-                        setMessages((prev) =>
-                            prev.map((msg) =>
-                                msg.id === assistantMessageId
-                                    ? { ...msg, content: accumulatedContent }
-                                    : msg
-                            )
-                        );
+                        chunkBuffer += event.content;
+
+                        // Batch updates: flush every 50ms or when buffer reaches certain size
+                        if (updateTimeoutRef.current) {
+                            clearTimeout(updateTimeoutRef.current);
+                        }
+
+                        if (chunkBuffer.length > 20) {
+                            flushBuffer();
+                        } else {
+                            updateTimeoutRef.current = setTimeout(flushBuffer, 50);
+                        }
                         break;
                     case "done":
+                        // Flush any remaining content
+                        if (updateTimeoutRef.current) {
+                            clearTimeout(updateTimeoutRef.current);
+                        }
+                        flushBuffer();
+
                         setMessages((prev) =>
                             prev.map((msg) =>
                                 msg.id === assistantMessageId
@@ -66,6 +94,9 @@ export const useChatStore = (): ChatStore => {
                         );
                         break;
                     case "error":
+                        if (updateTimeoutRef.current) {
+                            clearTimeout(updateTimeoutRef.current);
+                        }
                         setMessages((prev) =>
                             prev.map((msg) =>
                                 msg.id === assistantMessageId
@@ -81,6 +112,9 @@ export const useChatStore = (): ChatStore => {
                 }
             }
         } catch {
+            if (updateTimeoutRef.current) {
+                clearTimeout(updateTimeoutRef.current);
+            }
             setMessages((prev) =>
                 prev.map((msg) =>
                     msg.id === assistantMessageId

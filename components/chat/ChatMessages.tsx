@@ -8,9 +8,44 @@ import { ChatMessage } from "./ChatMessage";
 export const ChatMessages = () => {
     const { messages } = useChat();
     const bottomRef = useRef<HTMLDivElement>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const isUserScrollingRef = useRef(false);
+    const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+    // Detect user scrolling
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+        const container = scrollContainerRef.current;
+        if (!container) return;
+
+        const handleScroll = () => {
+            const { scrollTop, scrollHeight, clientHeight } = container;
+            const isAtBottom = scrollHeight - scrollTop - clientHeight < 100;
+            
+            isUserScrollingRef.current = !isAtBottom;
+            
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+            
+            scrollTimeoutRef.current = setTimeout(() => {
+                isUserScrollingRef.current = false;
+            }, 1000);
+        };
+
+        container.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            container.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    // Auto-scroll only if user isn't manually scrolling
+    useEffect(() => {
+        if (!isUserScrollingRef.current) {
+            bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+        }
     }, [messages]);
 
     if (messages.length === 0) {
@@ -36,7 +71,11 @@ export const ChatMessages = () => {
     }
 
     return (
-        <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6 scrollbar-thin">
+        <div 
+            ref={scrollContainerRef}
+            className="flex-1 overflow-y-auto px-4 py-6 space-y-6 scrollbar-thin"
+            style={{ scrollBehavior: 'smooth' }}
+        >
             {messages.map((message) => (
                 <ChatMessage key={message.id} message={message} />
             ))}
