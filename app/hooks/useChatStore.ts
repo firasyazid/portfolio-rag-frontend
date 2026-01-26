@@ -59,10 +59,15 @@ export const useChatStore = (): ChatStore => {
         };
 
         try {
+            let hasReceivedAnyData = false;
+            
             for await (const event of ChatService.streamChat(content)) {
+                hasReceivedAnyData = true;
+                
                 switch (event.type) {
                     case "sources":
                         sources = event.sources;
+                        
                         break;
                     case "chunk":
                         chunkBuffer += event.content;
@@ -79,6 +84,7 @@ export const useChatStore = (): ChatStore => {
                         }
                         break;
                     case "done":
+                        console.log("Stream completed successfully");
                         // Flush any remaining content
                         if (updateTimeoutRef.current) {
                             clearTimeout(updateTimeoutRef.current);
@@ -94,6 +100,7 @@ export const useChatStore = (): ChatStore => {
                         );
                         break;
                     case "error":
+                        console.error("Stream error event:", event.message);
                         if (updateTimeoutRef.current) {
                             clearTimeout(updateTimeoutRef.current);
                         }
@@ -111,14 +118,42 @@ export const useChatStore = (): ChatStore => {
                         break;
                 }
             }
-        } catch {
+            
+            // If stream ended without receiving data or done event, mark as complete
+            if (!hasReceivedAnyData || accumulatedContent === "") {
+                console.warn("Stream ended without data");
+                if (updateTimeoutRef.current) {
+                    clearTimeout(updateTimeoutRef.current);
+                }
+                flushBuffer();
+                setMessages((prev) =>
+                    prev.map((msg) =>
+                        msg.id === assistantMessageId
+                            ? { 
+                                ...msg, 
+                                content: accumulatedContent || "No response received. Please try again.",
+                                isStreaming: false, 
+                                sources 
+                            }
+                            : msg
+                    )
+                );
+            }
+        } catch (error) {
+            console.error("Chat error:", error);
             if (updateTimeoutRef.current) {
                 clearTimeout(updateTimeoutRef.current);
             }
             setMessages((prev) =>
                 prev.map((msg) =>
                     msg.id === assistantMessageId
-                        ? { ...msg, content: "Connection error. Please try again.", isStreaming: false }
+                        ? { 
+                            ...msg, 
+                            content: error instanceof Error 
+                                ? `Connection error: ${error.message}` 
+                                : "Connection error. Please try again.", 
+                            isStreaming: false 
+                        }
                         : msg
                 )
             );
