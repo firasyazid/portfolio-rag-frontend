@@ -33,7 +33,7 @@ export default function TechStack() {
     return (
         <section className="px-4 md:px-6 py-20 md:py-32 relative z-10 overflow-hidden" id="techstack">
             <div className="max-w-7xl mx-auto mb-16">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 text-cyan-300 tracking-tight">
                     Tech Stack
                 </h2>
                 <p className="text-white/70 text-base md:text-lg font-light">

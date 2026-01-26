@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { SiPython, SiReact, SiNodedotjs, SiAngular, SiGitlab } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
+import { IconType } from "react-icons";
 
 // Project Data Type
 type Project = {
@@ -14,6 +17,7 @@ type Project = {
     liveUrl?: string;
     features: string[];
     category: "Web & AI" | "Mobile & AI" | "DevOps & Cloud";
+    primaryIcon?: IconType;
 };
 
 export default function Projects() {
@@ -35,6 +39,7 @@ export default function Projects() {
             ],
             githubUrl: "https://github.com/firasyazid/AI-release-Manager--MCP-",
             category: "DevOps & Cloud",
+            primaryIcon: SiPython,
         },
         {
             id: "rag-assistant",
@@ -52,6 +57,7 @@ export default function Projects() {
             ],
             videoUrl: "https://drive.google.com/file/d/1ZqVJuwfqe5-bAUuyJxFcKEN3Lhw4sTiz/view?usp=sharing&usp=embed_facebook",
             category: "Web & AI",
+            primaryIcon: SiReact,
         },
         {
             id: "github-assistant",
@@ -70,6 +76,7 @@ export default function Projects() {
             githubUrl: "https://github.com/firasyazid/AI-Powered-GitHub-Assistant-with-MCP",
             videoUrl: "https://drive.google.com/file/d/1vzF0qKA_CLu3hZTrcVT5FwtMbyvPX4x0/view?usp=sharing",
             category: "Web & AI",
+            primaryIcon: SiNodedotjs,
         },
         {
             id: "eva-padel",
@@ -87,6 +94,7 @@ export default function Projects() {
             ],
             liveUrl: "https://apps.apple.com/tn/app/eva-padel/id6757681607",
             category: "Mobile & AI",
+            primaryIcon: TbBrandReactNative,
         },
         {
             id: "pilate-co",
@@ -105,6 +113,7 @@ export default function Projects() {
             ],
             liveUrl: "https://apps.apple.com/us/app/pilates-co/id6754307786",
             category: "Mobile & AI",
+            primaryIcon: TbBrandReactNative,
         },
         {
             id: "delta-architect",
@@ -122,11 +131,12 @@ export default function Projects() {
             ],
             liveUrl: "https://play.google.com/store/apps/details?id=com.firas_yazid1.DeltaFront&hl=en_US",
             category: "Mobile & AI",
+            primaryIcon: TbBrandReactNative,
         },
         {
             id: "ai-journal",
             filename: "AIJournal.tsx",
-            title: "AI-Powered Interactive Journaling RAG, Embeddings, Vector DB & LLMs",
+            title: "AI-Powered Interactive Journaling RAG, Embeddings, Vector DB",
             description: "A personal journaling app that lets users interact with their past entries using AI. Each journal entry is converted into embeddings and stored in Pinecone for semantic search. When users ask questions, LangChain retrieves the most relevant entries and provides context-aware responses via the Qwen model.",
             techStack: ["React Native", "Expo", "NestJS", "MongoDB", "LangChain", "Pinecone", "Qwen LLM"],
             features: [
@@ -140,6 +150,7 @@ export default function Projects() {
             ],
             videoUrl: "https://drive.google.com/file/d/1IdR5CnCO_7IOt1FYZdEAbvgU_uN_67ro/view",
             category: "Mobile & AI",
+            primaryIcon: TbBrandReactNative,
         },
         {
             id: "gym-assistant",
@@ -158,6 +169,7 @@ export default function Projects() {
             ],
             githubUrl: "https://github.com/firasyazid/AI-Powered-Fitness-app-with-MCP",
             category: "Mobile & AI",
+            primaryIcon: TbBrandReactNative,
         },
         {
             id: "face-verification",
@@ -174,6 +186,7 @@ export default function Projects() {
             ],
             githubUrl: "https://github.com/firasyazid/Face-Verification-Liveness-Detection-system",
             category: "Mobile & AI",
+            primaryIcon: SiPython,
         },
         {
             id: "emsat-platform",
@@ -190,6 +203,7 @@ export default function Projects() {
             ],
             videoUrl: "https://drive.google.com/file/d/1hHVdLS--rs7YfPFiIrMZl93s3svGTGoY/view",
             category: "Web & AI",
+            primaryIcon: SiAngular,
         },
         {
             id: "general-disease-prediction",
@@ -206,6 +220,7 @@ export default function Projects() {
             ],
             videoUrl: "https://drive.google.com/file/d/1GkWGDLfS8JjNi4BMKfn7pttgOOlws87j/view",
             category: "Web & AI",
+            primaryIcon: SiPython,
         },
         {
             id: "gitlab-ci-pipeline",
@@ -222,6 +237,7 @@ export default function Projects() {
             ],
             videoUrl: "#",
             category: "DevOps & Cloud",
+            primaryIcon: SiGitlab,
         },
         {
             id: "mean-ecommerce",
@@ -238,6 +254,7 @@ export default function Projects() {
             ],
             videoUrl: "https://drive.google.com/file/d/1j-lSPOy7a6qyqEHi_oxeLQiB3iF64so9/view",
             category: "Web & AI",
+            primaryIcon: SiAngular,
         }
     ];
 
@@ -265,7 +282,7 @@ export default function Projects() {
     return (
         <section className="min-h-screen px-4 md:px-6 py-16 md:py-32 relative z-10" id="projects">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 text-cyan-300 tracking-tight text-center md:text-left">
                     Featured Projects
                 </h2>
                 <p className="text-white/70 text-base md:text-lg mb-8 md:mb-12 text-center md:text-left font-light">
@@ -351,13 +368,17 @@ export default function Projects() {
                                                             }`}
                                                     >
                                                         {/* Dynamic Tech Icon */}
-                                                        {project.filename.endsWith('.tsx') || project.filename.endsWith('.ts') || project.filename.endsWith('.yml') ? (
-                                                            <div className="w-4 h-4 flex items-center justify-center text-blue-400">
-                                                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" /></svg>
+                                                        {project.primaryIcon ? (
+                                                            <div className="w-4 h-4 flex items-center justify-center text-cyan-400">
+                                                                <project.primaryIcon className="w-full h-full" />
                                                             </div>
-                                                        ) : (
+                                                        ) : project.filename.endsWith('.py') ? (
                                                             <div className="w-4 h-4 flex items-center justify-center text-yellow-400">
                                                                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z" /></svg>
+                                                            </div>
+                                                        ) : (
+                                                            <div className="w-4 h-4 flex items-center justify-center text-blue-400">
+                                                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" /></svg>
                                                             </div>
                                                         )}
                                                         <span className="truncate font-medium tracking-wide text-xs">{project.filename}</span>
@@ -375,9 +396,9 @@ export default function Projects() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 flex flex-col bg-[#1e1e1e]/80 min-h-0">
+                    <div className="flex-1 flex flex-col bg-[#1e1e1e]/80 overflow-hidden">
                         {/* Editor Tab Bar */}
-                        <div className="flex bg-[#2d2d2d] border-b border-black/20 overflow-x-auto shrink-0">
+                        <div className="flex bg-[#2d2d2d] border-b border-black/20 overflow-x-auto scrollbar-thin-horizontal shrink-0">
                             {projects.map((project) => (
                                 <button
                                     key={project.id}
@@ -394,7 +415,7 @@ export default function Projects() {
                         </div>
 
                         {/* Split View Content */}
-                        <div className="flex-1 p-4 md:p-8 overflow-y-scroll scrollbar-thin">
+                        <div className="flex-1 p-4 md:p-8 overflow-y-auto scrollbar-thin">
                             <div className="space-y-10">
 
                                 {/* Header Block */}

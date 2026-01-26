@@ -25,7 +25,7 @@ export const AskSection = () => {
     );
 
     return (
-        <section className="relative z-10 py-24 px-6 relative" id="contact">
+        <section className="relative z-10 py-24 px-6 relative" id="ai-clone">
             {/* Background elements if needed */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[100px]" />
