@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SiPython, SiReact, SiNodedotjs, SiAngular, SiGitlab } from "react-icons/si";
+import { SiPython, SiReact, SiNodedotjs, SiAngular, SiGitlab, SiNextdotjs } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { IconType } from "react-icons";
 
@@ -24,6 +24,24 @@ export default function Projects() {
     const [activeProject, setActiveProject] = useState<string>("ai-release-manager");
 
     const projects: Project[] = [
+        {
+            id: "nextalent-ats",
+            filename: "NextalentATS.tsx",
+            title: "NEXTALENT ATS - Smart Recruitment Platform & CV Chat",
+            description: "An advanced recruitment platform using smart embeddings (all-MiniLM-L6-v2) to match candidates with jobs precisely. It features an interactive RAG-powered chat that lets recruiters explore and query candidate CVs in real time, along with a sophisticated scoring engine combining semantic similarity, keyword overlap, and experience logic.",
+            techStack: ["Next.js 15", "FastAPI", "PostgreSQL", "pgvector", "Redis", "Qwen2.5 LLM", "SQLAlchemy"],
+            features: [
+                "Smart Embedding System extracting CV data and embedding skills, experience, and education",
+                "Advanced Scoring Engine combining pgvector cosine search, keyword overlap, and hybrid aggregation",
+                "Built-in RAG Assistant enabling recruiters to query candidate profiles dynamically in real-time",
+                "Fully async backend architecture powered by FastAPI, Async SQLAlchemy, and Redis caching",
+                "Modern, responsive frontend built with Next.js 15 featuring a Glassmorphism design system",
+                "Context-aware AI utilizing Qwen2.5 via HuggingFace for sliding memory summarization"
+            ],
+            liveUrl: "https://next-talent-ats.vercel.app/",
+            category: "Web & AI",
+            primaryIcon: SiNextdotjs,
+        },
         {
             id: "ai-release-manager",
             filename: "ReleaseManager.yml",
