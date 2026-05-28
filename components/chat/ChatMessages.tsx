@@ -4,8 +4,10 @@ import { useEffect, useRef } from "react";
 import { Sparkles } from "lucide-react";
 import { useChat } from "./ChatContext";
 import { ChatMessage } from "./ChatMessage";
+import { useTranslations } from "next-intl";
 
 export const ChatMessages = () => {
+    const t = useTranslations("ChatWidget");
     const { messages } = useChat();
     const bottomRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -57,11 +59,11 @@ export const ChatMessages = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <p className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Assistant</p>
+                        <p className="text-sm font-medium text-zinc-400 uppercase tracking-wider">{t("welcome_assistant")}</p>
                         <h1 className="text-xl font-bold text-white leading-snug">
-                            This is Firas AI.<br />
+                            {t("welcome_title")}<br />
                             <span className="text-zinc-400 font-normal text-base mt-2 block">
-                                An AI trained on my experience, skills, and journey. Ask about my CV, LinkedIn, projects, or life advice.
+                                {t("welcome_subtitle")}
                             </span>
                         </h1>
                     </div>

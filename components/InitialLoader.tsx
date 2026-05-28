@@ -138,7 +138,7 @@ export default function InitialLoader({
             <div className="control maximize" />
           </div>
         </div>
-        <div className="text">Loading...</div>
+        <div className="text">Hello, World!</div>
       </div>
     </div>
   );

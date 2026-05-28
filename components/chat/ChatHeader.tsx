@@ -2,8 +2,10 @@
 
 import { Sparkles, X, Trash2 } from "lucide-react";
 import { useChat } from "./ChatContext";
+import { useTranslations } from "next-intl";
 
 export const ChatHeader = () => {
+    const t = useTranslations("ChatWidget");
     const { closePanel, clearConversation, messages } = useChat();
 
     return (
@@ -14,10 +16,10 @@ export const ChatHeader = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <span className="text-sm font-semibold text-white tracking-tight">
-                        Firas AI
+                        {t("header_title")}
                     </span>
                     <span className="rounded-full bg-zinc-800 px-2 py-0.5 text-[10px] text-zinc-400 font-medium border border-white/5">
-                        Assistant
+                        {t("welcome_assistant")}
                     </span>
                 </div>
             </div>

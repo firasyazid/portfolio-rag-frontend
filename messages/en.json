@@ -1,0 +1,313 @@
+{
+  "Navigation": {
+    "projects": "Projects",
+    "aiClone": "My AI Clone"
+  },
+  "Hero": {
+    "h1_prefix": "Where",
+    "h1_highlight1": "Software Engineering",
+    "h1_mid": "Meets",
+    "h1_highlight2": "AI Innovation",
+    "download_cv": "Download CV",
+    "modal_subtitle": "Choose your preferred language",
+    "modal_en": "English",
+    "modal_fr": "Français",
+    "modal_cancel": "Cancel"
+  },
+  "About": {
+    "tab_about": "About Me",
+    "tab_experience": "Experience",
+    "tab_education": "Education",
+    "tab_certifications": "Certifications",
+    "tab_skills": "Skills",
+    "profile_title": "Profile",
+    "about_title": "About Me",
+    "about_text_1": "Hello! I'm an innovative Full Stack AI Engineer bridging the gap between Software excellence and AI innovation.",
+    "about_text_2": "I excel in building scalable AI-powered web and mobile applications.",
+    "experience_title": "Professional Experience",
+    "education_title": "Education",
+    "certifications_title": "Certifications",
+    "skills_title": "Skills & Technologies"
+  },
+  "Projects": {
+    "title": "Selected Projects",
+    "subtitle": "A showcase of my recent work bridging AI, DevOps, and Full Stack Development.",
+    "button_live": "Live Demo",
+    "button_github": "View Code",
+    "button_video": "Watch Video",
+    "tabs_all": "All",
+    "tabs_web_ai": "Web & AI",
+    "tabs_mobile_ai": "Mobile & AI",
+    "tabs_devops": "DevOps"
+  },
+  "TechStack": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies and tools I work with to build modern applications"
+  },
+  "Footer": {
+    "quote": "How can learning stop, when technology never does?",
+    "download_cv": "Download CV",
+    "rights": "All rights reserved. Firas Yazid."
+  },
+  "AskSection": {
+    "title": "Meet My AI Clone",
+    "title_highlight": "AI Clone",
+    "description": "I’ve built a Retrieval-Augmented Generation (RAG) system using my personal data. It’s fully aware of my experience, skills, and background. Ask it anything, and it will provide accurate insights tailored to me!",
+    "placeholder": "e.g. What is Firas's tech stack?"
+  },
+  "AboutData": {
+    "about_text": "Software Engineer with 3+ years of experience in full-stack development. Experienced in building scalable web & mobile applications using modern frameworks like React, Angular, React Native, and FastAPI. Strong DevOps mindset with containerization expertise (Docker) and CI/CD pipeline implementation. Passionate about integrating cutting-edge AI technologies including LLMs, RAG systems, and Model Context Protocol (MCP) into real-world applications.",
+    "experiences": [
+      {
+        "date": "Jan 2025 – Present",
+        "role": "Full Stack AI Developer",
+        "company": "NobleMind",
+        "details": [
+          "Design and build scalable web & mobile AI-powered applications using React.js, React Native, Next.js, Node.js, and Python",
+          "Develop healthcare platforms focusing on patient care, medical data management, and digital health innovation",
+          "Integrate Generative AI solutions including chatbots, automated workflows, predictive analytics, and personalized recommendations",
+          "Architect intelligent systems combining LLMs with Retrieval-Augmented Generation (RAG) for context-aware solutions"
+        ]
+      },
+      {
+        "date": "Dec 2022 – Feb 2025",
+        "role": "Full Stack TypeScript Developer",
+        "company": "Parhelion Consulting & Training",
+        "details": [
+          "Designed and developed high-performance web and mobile applications with React, Angular, and React Native",
+          "Built scalable backend systems using Node.js and Spring Boot with MongoDB and SQL databases",
+          "Implemented CI/CD pipelines and containerization with Docker for efficient deployment across environments",
+          "Optimized database design and performance for both NoSQL and relational systems"
+        ]
+      },
+      {
+        "date": "Feb 2024 – Jul 2024",
+        "role": "Full Stack JavaScript Developer & MLOps Engineer",
+        "company": "B2M-IT",
+        "details": [
+          "Developed intelligent healthcare mobile app connecting doctors, pharmacies, and patients for seamless communication and medication tracking",
+          "Built advanced ML models for disease prediction, achieving high diagnostic accuracy and supporting clinical decision-making",
+          "Created web-based disease prediction platform providing real-time insights for healthcare specialists",
+          "Implemented CI/CD pipelines automating development workflows with minimal downtime"
+        ]
+      },
+      {
+        "date": "Sept 2023 – May 2024",
+        "role": "Teacher and Trainer",
+        "company": "CMF Formation",
+        "details": [
+          "Provided in-person university support courses for undergraduate computer science students",
+          "Taught core programming concepts including C Language, Java, and fundamental algorithms"
+        ]
+      },
+      {
+        "date": "Jun 2022 – Aug 2022",
+        "role": "Full Stack Web Application Developer",
+        "company": "Parhelion Consulting & Training",
+        "details": [
+          "Developed complete e-commerce platform using MEAN stack (Angular, Node.js, Express.js, MongoDB)",
+          "Implemented responsive frontend interfaces and scalable backend APIs",
+          "Containerized application using Docker for consistent deployment"
+        ]
+      },
+      {
+        "date": "Jun 2021 – Sept 2021",
+        "role": "Full Stack Web Application Developer",
+        "company": "Aftercode",
+        "details": [
+          "Built hotel booking platform with React frontend and Node.js backend",
+          "Implemented database design using MongoDB and version control with GitHub",
+          "Ensured smooth user experience with robust functionality and responsive design"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "date": "2019 – 2024",
+        "title": "Software Engineer Degree",
+        "institution": "ESPRIT, Tunisia",
+        "focus": "Engineering Excellence"
+      },
+      {
+        "date": "2015 – 2019",
+        "title": "High School Diploma in Computer Science",
+        "institution": "Tunisia",
+        "focus": "Computer Science Focus"
+      }
+    ]
+  },
+  "ProjectsData": {
+    "nextalent-ats": {
+      "title": "NEXTALENT ATS - Smart Recruitment Platform",
+      "description": "An advanced recruitment platform using smart embeddings (all-MiniLM-L6-v2) to match candidates with jobs precisely. RAG-powered chat lets recruiters explore CVs in real time.",
+      "features": [
+        "Smart Embedding System extracting CV data",
+        "Advanced Scoring Engine combining pgvector and keyword overlap",
+        "Built-in RAG Assistant enabling real-time profile queries",
+        "Fully async backend architecture powered by FastAPI",
+        "Modern, responsive frontend built with Next.js 15",
+        "Context-aware AI utilizing Qwen2.5 via HuggingFace"
+      ]
+    },
+    "ai-release-manager": {
+      "title": "Smart CI/CD Pipeline with AI-Powered MCP Release Gate",
+      "description": "An AI-powered CI/CD release gate built with MCP architecture. It analyzes test results, code quality, and security metrics using Google Gemini AI.",
+      "features": [
+        "AI-Powered Release Project evaluating tests and metrics",
+        "Uses Google Gemini AI to understand build risks",
+        "Generates APPROVE or BLOCK deployment decisions",
+        "CI/CD Pipeline with GitHub Actions",
+        "Docker image building and production deployment"
+      ]
+    },
+    "rag-assistant": {
+      "title": "Full-Stack AI Assistant: Web Scraping + RAG + LLM",
+      "description": "RAG Agent for Web Scraping & Question Answering using LangChain WebBaseLoader, ChromaDB with embeddings, and a modern React frontend.",
+      "features": [
+        "Web scraping powered by LangChain WebBaseLoader",
+        "Smart chunking & hybrid embeddings",
+        "Persistent vector storage with ChromaDB",
+        "RESTful API with FastAPI",
+        "End-to-end RAG pipeline",
+        "Clean, interactive UI built with React + TailwindCSS"
+      ]
+    },
+    "github-assistant": {
+      "title": "AI-Powered GitHub Assistant with MCP + Llama",
+      "description": "A GitHub AI Assistant that integrates directly with repositories. Features AI-powered code review, issue triage with auto-labeling, and works offline.",
+      "features": [
+        "AI-Powered Code Review analyzing code for bugs",
+        "Suggests improvements for readability and best practices",
+        "Works offline with Llama running locally on LM Studio",
+        "Issue Triage fetching and summarizing repository issues",
+        "Auto-suggests labels to save maintainers time",
+        "Smart issue description summarization"
+      ]
+    },
+    "eva-padel": {
+      "title": "EVA Padel – Real-Time Paddle Tournament & Player Tracking",
+      "description": "A comprehensive app dedicated to paddle players, coaches, and clubs. Streamlines tournament management while providing performance tracking.",
+      "features": [
+        "Match & Tournament Management",
+        "Player Evaluation system with coach reviews",
+        "Automatic player level calculation",
+        "Live Tournament Support with real-time scores",
+        "Personalized dashboards for players and coaches",
+        "Live notifications and updates"
+      ]
+    },
+    "pilate-co": {
+      "title": "Pilate & Co - Cross-Platform Mobile Application",
+      "description": "A modern mobile application for Pilates enthusiasts with secure authentication, online class booking, subscription management, and social feed.",
+      "features": [
+        "Secure user authentication",
+        "Online class reservations",
+        "Subscription management",
+        "Social news feed for community interaction",
+        "Intuitive and high-performance mobile interface",
+        "Push notifications for session reminders",
+        "Multilingual support (French & English)"
+      ]
+    },
+    "delta-architect": {
+      "title": "Mobile Application - Delta Architect",
+      "description": "A mobile application developed for Delta Cuisine architects to manage orders, track commands, stay updated with news, and access a loyalty system.",
+      "features": [
+        "Order and command management",
+        "Real-time news updates",
+        "Loyalty program integration",
+        "Seamless user experience built with React Native",
+        "Backend API with Node.js",
+        "Secure data storage with MongoDB"
+      ]
+    },
+    "ai-journal": {
+      "title": "AI-Powered Interactive Journaling RAG, Embeddings, Vector DB",
+      "description": "A personal journaling app that lets users interact with their past entries using AI. Each journal entry is converted into embeddings and stored in Pinecone for semantic search.",
+      "features": [
+        "Vector embeddings for semantic understanding",
+        "Pinecone vector database for efficient search",
+        "LangChain integration for context-aware responses",
+        "Qwen LLM for natural language processing",
+        "Full-stack architecture with Expo frontend and NestJS backend"
+      ]
+    },
+    "gym-assistant": {
+      "title": "AI-Powered Gym Assistant App using MCP",
+      "description": "A fitness app powered by AI that generates personalized workout plans while remembering and understanding the user over time using LLaMA 3 and MCP.",
+      "features": [
+        "MCP Integration enriching AI prompts with context",
+        "AI-Powered Adaptive Coaching",
+        "LLaMA 3 Local Model running via LM Studio",
+        "Personalized Workout Plan Generation",
+        "Memory-driven coaching that adapts to user"
+      ]
+    },
+    "face-verification": {
+      "title": "Face Verification & Liveness Detection System",
+      "description": "Secure biometric onboarding pipeline combining face verification and active liveness detection to prevent identity fraud.",
+      "features": [
+        "FaceNet512 face embeddings via DeepFace",
+        "Real-time liveness detection using MediaPipe",
+        "Anti-spoofing protection against static images and replays",
+        "Two-step biometric verification",
+        "React Native frontend with live video streaming"
+      ]
+    },
+    "emsat-platform": {
+      "title": "EMSAT Exam Simulation Platform",
+      "description": "A comprehensive full-stack e-learning platform simulating the standardized EMSAT exam environment with robust assessment mechanisms.",
+      "features": [
+        "Real-time exam simulation engine",
+        "Dynamic Question System supporting Drag-and-Drop",
+        "Advanced Student Dashboard for tracking progress",
+        "Scalable microservices architecture with Docker",
+        "Responsive design across devices"
+      ]
+    },
+    "general-disease-prediction": {
+      "title": "Multi-Disease AI Prediction Platform",
+      "description": "Specialized healthcare web app utilizing an ensemble of machine learning models for early-stage risk assessment of conditions like COVID-19 and heart disease.",
+      "features": [
+        "Ensemble ML Architecture deploying 5 models",
+        "Critical Disease Screening for Heart Disease, Diabetes, etc.",
+        "Symptom-Based Diagnosis engine for 50+ illnesses",
+        "Interactive Web Interface with Streamlit",
+        "Probability scores for medical risk analysis"
+      ]
+    },
+    "gitlab-ci-pipeline": {
+      "title": "Cloud-Native CI/CD Pipeline Architecture",
+      "description": "A robust, 100% cloud-based Continuous Integration and Deployment pipeline designed for high-availability healthcare applications.",
+      "features": [
+        "Comprehensive 6-Stage Pipeline",
+        "SonarCloud Integration for security gates",
+        "Automated Artifact Management",
+        "Cloud-Native Deployment",
+        "Scalable Infrastructure automating workflows"
+      ]
+    },
+    "mean-ecommerce": {
+      "title": "Full-Stack Digital Marketplace Architecture",
+      "description": "A high-performance e-commerce ecosystem built on the MEAN stack delivering a seamless shopping experience with robust backend management.",
+      "features": [
+        "End-to-End MEAN Stack Architecture",
+        "Advanced Product & Inventory Management",
+        "Secure User Authentication & Profile System",
+        "Responsive Frontend Design",
+        "Integrated Order Processing Pipeline"
+      ]
+    }
+  },
+  "ChatWidget": {
+    "header_title": "AI Clone",
+    "header_status": "Online",
+    "input_placeholder": "Ask me anything...",
+    "popular_questions_title": "Popular Questions:",
+    "sources_title": "Sources",
+    "welcome_assistant": "Assistant",
+    "welcome_title": "This is Firas AI.",
+    "welcome_subtitle": "An AI trained on my experience, skills, and journey. Ask about my CV, LinkedIn, projects, or life advice.",
+    "based_on_source": "Based on {count} source(s)"
+  }
+}

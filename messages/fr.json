@@ -1,0 +1,313 @@
+{
+  "Navigation": {
+    "projects": "Projets",
+    "aiClone": "Mon Clone IA"
+  },
+  "Hero": {
+    "h1_prefix": "Où",
+    "h1_highlight1": "L'Ingénierie Logicielle",
+    "h1_mid": "Rencontre",
+    "h1_highlight2": "L'Innovation IA",
+    "download_cv": "Télécharger CV",
+    "modal_subtitle": "Choisissez votre langue préférée",
+    "modal_en": "Anglais",
+    "modal_fr": "Français",
+    "modal_cancel": "Annuler"
+  },
+  "About": {
+    "tab_about": "À propos",
+    "tab_experience": "Expérience",
+    "tab_education": "Éducation",
+    "tab_certifications": "Certifications",
+    "tab_skills": "Compétences",
+    "profile_title": "Profil",
+    "about_title": "À propos de moi",
+    "about_text_1": "Bonjour ! Je suis un Ingénieur Full Stack IA innovant, comblant le fossé entre l'excellence logicielle et l'innovation en IA.",
+    "about_text_2": "J'excelle dans la création d'applications web et mobiles évolutives propulsées par l'IA.",
+    "experience_title": "Expérience Professionnelle",
+    "education_title": "Formation",
+    "certifications_title": "Certifications",
+    "skills_title": "Compétences & Technologies"
+  },
+  "Projects": {
+    "title": "Projets Sélectionnés",
+    "subtitle": "Un aperçu de mes travaux récents alliant IA, DevOps et Développement Full Stack.",
+    "button_live": "Démo Live",
+    "button_github": "Code Source",
+    "button_video": "Voir la Vidéo",
+    "tabs_all": "Tous",
+    "tabs_web_ai": "Web & IA",
+    "tabs_mobile_ai": "Mobile & IA",
+    "tabs_devops": "DevOps"
+  },
+  "TechStack": {
+    "title": "Stack Technique",
+    "subtitle": "Technologies et outils avec lesquels je travaille pour créer des applications modernes"
+  },
+  "Footer": {
+    "quote": "Comment l'apprentissage peut-il s'arrêter, alors que la technologie ne s'arrête jamais ?",
+    "download_cv": "Télécharger CV",
+    "rights": "Tous droits réservés. Firas Yazid."
+  },
+  "AskSection": {
+    "title": "Découvrez Mon Clone IA",
+    "title_highlight": "Clone IA",
+    "description": "J’ai conçu un système de Génération Augmentée par la Recherche (RAG) avec mes propres données. Il connaît parfaitement mon expérience, mes compétences et mon parcours. Posez-lui n’importe quelle question et il vous donnera des réponses précises et personnalisées !",
+    "placeholder": "ex. Quelle est la stack technique de Firas ?"
+  },
+  "AboutData": {
+    "about_text": "Ingénieur logiciel avec plus de 3 ans d'expérience dans le développement full-stack. Expérimenté dans la création d'applications web et mobiles évolutives à l'aide de frameworks modernes tels que React, Angular, React Native et FastAPI. Forte mentalité DevOps avec une expertise en conteneurisation (Docker) et en mise en oeuvre de pipelines CI/CD. Passionné par l'intégration de technologies d'IA de pointe, notamment les LLMs, les systèmes RAG et le Model Context Protocol (MCP) dans des applications réelles.",
+    "experiences": [
+      {
+        "date": "Jan. 2025 – Présent",
+        "role": "Dév. Full Stack IA",
+        "company": "NobleMind",
+        "details": [
+          "Conception et développement d'applications web et mobiles évolutives propulsées par l'IA avec React.js, React Native, Next.js, Node.js et Python",
+          "Développement de plateformes de santé axées sur les soins aux patients, la gestion des données médicales et l'innovation en santé numérique",
+          "Intégration de solutions d'IA générative incluant des chatbots, des flux de travail automatisés, des analyses prédictives et des recommandations personnalisées",
+          "Architecture de systèmes intelligents combinant des LLMs avec la Génération Augmentée par la Recherche (RAG) pour des solutions contextuelles"
+        ]
+      },
+      {
+        "date": "Déc. 2022 – Fév. 2025",
+        "role": "Dév. Full Stack TypeScript",
+        "company": "Parhelion Consulting & Training",
+        "details": [
+          "Conception et développement d'applications web et mobiles haute performance avec React, Angular et React Native",
+          "Création de systèmes backend évolutifs utilisant Node.js et Spring Boot avec des bases de données MongoDB et SQL",
+          "Mise en œuvre de pipelines CI/CD et conteneurisation avec Docker pour un déploiement efficace dans tous les environnements",
+          "Optimisation de la conception et des performances des bases de données pour les systèmes NoSQL et relationnels"
+        ]
+      },
+      {
+        "date": "Fév. 2024 – Juil. 2024",
+        "role": "Dév. Full Stack JavaScript & Ingénieur MLOps",
+        "company": "B2M-IT",
+        "details": [
+          "Développement d'une application mobile de santé intelligente reliant médecins, pharmacies et patients pour une communication fluide et le suivi des médicaments",
+          "Création de modèles de ML avancés pour la prédiction des maladies, atteignant une grande précision diagnostique et soutenant la prise de décision clinique",
+          "Création d'une plateforme web de prédiction des maladies fournissant des informations en temps réel aux spécialistes de la santé",
+          "Mise en œuvre de pipelines CI/CD automatisant les flux de développement avec un temps d'arrêt minimal"
+        ]
+      },
+      {
+        "date": "Sept. 2023 – Mai 2024",
+        "role": "Enseignant et Formateur",
+        "company": "CMF Formation",
+        "details": [
+          "Dispense de cours de soutien universitaire en personne pour les étudiants de premier cycle en informatique",
+          "Enseignement des concepts de programmation fondamentaux, y compris le langage C, Java et les algorithmes de base"
+        ]
+      },
+      {
+        "date": "Juin 2022 – Août 2022",
+        "role": "Dév. d'Applications Web Full Stack",
+        "company": "Parhelion Consulting & Training",
+        "details": [
+          "Développement d'une plateforme e-commerce complète en utilisant la pile MEAN (Angular, Node.js, Express.js, MongoDB)",
+          "Mise en œuvre d'interfaces frontend réactives et d'API backend évolutives",
+          "Conteneurisation de l'application à l'aide de Docker pour un déploiement cohérent"
+        ]
+      },
+      {
+        "date": "Juin 2021 – Sept. 2021",
+        "role": "Dév. d'Applications Web Full Stack",
+        "company": "Aftercode",
+        "details": [
+          "Création d'une plateforme de réservation d'hôtel avec un frontend React et un backend Node.js",
+          "Conception de la base de données à l'aide de MongoDB et contrôle de version avec GitHub",
+          "Garantie d'une expérience utilisateur fluide avec des fonctionnalités robustes et un design réactif"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "date": "2019 – 2024",
+        "title": "Diplôme d'Ingénieur en Génie Logiciel",
+        "institution": "ESPRIT, Tunisie",
+        "focus": "Excellence en Ingénierie"
+      },
+      {
+        "date": "2015 – 2019",
+        "title": "Baccalauréat en Sciences Informatiques",
+        "institution": "Tunisie",
+        "focus": "Focus Sciences Informatiques"
+      }
+    ]
+  },
+  "ProjectsData": {
+    "nextalent-ats": {
+      "title": "NEXTALENT ATS - Plateforme de Recrutement Intelligente",
+      "description": "Une plateforme de recrutement avancée utilisant des embeddings intelligents pour faire correspondre les candidats aux offres de manière précise. Chat alimenté par RAG.",
+      "features": [
+        "Système d'embedding intelligent extrayant les données des CV",
+        "Moteur de scoring avancé (pgvector et chevauchement de mots-clés)",
+        "Assistant RAG intégré permettant des requêtes en temps réel",
+        "Architecture backend entièrement asynchrone (FastAPI)",
+        "Frontend moderne et réactif avec Next.js 15",
+        "IA contextuelle utilisant Qwen2.5 via HuggingFace"
+      ]
+    },
+    "ai-release-manager": {
+      "title": "Pipeline CI/CD Intelligent avec validation MCP",
+      "description": "Une validation de déploiement CI/CD alimentée par l'IA avec architecture MCP. Analyse les tests, la qualité du code et les métriques de sécurité via Google Gemini AI.",
+      "features": [
+        "Évaluation de version via l'IA (tests et métriques)",
+        "Utilise Google Gemini AI pour évaluer les risques",
+        "Prend des décisions de déploiement ACcepter ou BLOQUER",
+        "Pipeline CI/CD avec GitHub Actions",
+        "Déploiement Docker en production"
+      ]
+    },
+    "rag-assistant": {
+      "title": "Assistant IA Full-Stack : Web Scraping + RAG + LLM",
+      "description": "Agent RAG pour le Web Scraping et les Questions/Réponses utilisant LangChain WebBaseLoader, ChromaDB avec des embeddings et React.",
+      "features": [
+        "Web scraping propulsé par LangChain WebBaseLoader",
+        "Découpage intelligent & embeddings hybrides",
+        "Stockage vectoriel persistant avec ChromaDB",
+        "API RESTful avec FastAPI",
+        "Pipeline RAG de bout en bout",
+        "Interface utilisateur fluide avec React + TailwindCSS"
+      ]
+    },
+    "github-assistant": {
+      "title": "Assistant GitHub IA avec MCP + Llama",
+      "description": "Un assistant GitHub IA intégré aux dépôts. Permet la révision de code par IA, le tri des tickets avec labels automatiques et fonctionne hors ligne.",
+      "features": [
+        "Révision de code IA pour analyser les bugs",
+        "Suggère des améliorations pour les bonnes pratiques",
+        "Fonctionne hors ligne avec Llama sur LM Studio",
+        "Tri de tickets en temps réel",
+        "Suggère automatiquement des étiquettes (labels)",
+        "Résumé intelligent des descriptions de tickets"
+      ]
+    },
+    "eva-padel": {
+      "title": "EVA Padel – Suivi des tournois de padel en temps réel",
+      "description": "Une application complète pour les joueurs de padel, les entraîneurs et les clubs. Simplifie la gestion des tournois et le suivi des performances.",
+      "features": [
+        "Gestion des matchs & des tournois",
+        "Système d'évaluation des joueurs",
+        "Calcul automatique du niveau des joueurs",
+        "Support en direct des tournois (scores en temps réel)",
+        "Tableaux de bord personnalisés",
+        "Notifications et mises à jour en direct"
+      ]
+    },
+    "pilate-co": {
+      "title": "Pilate & Co - Application Mobile Multiplateforme",
+      "description": "Application mobile moderne pour les passionnés de Pilates avec authentification sécurisée, réservation en ligne et flux social.",
+      "features": [
+        "Authentification utilisateur sécurisée",
+        "Réservations de cours en ligne",
+        "Gestion des abonnements",
+        "Flux d'actualités social",
+        "Interface mobile performante",
+        "Notifications push pour les rappels de sessions",
+        "Support multilingue (Français & Anglais)"
+      ]
+    },
+    "delta-architect": {
+      "title": "Application Mobile - Delta Architect",
+      "description": "Application mobile pour les architectes Delta Cuisine pour gérer leurs commandes, s'informer des actualités et accéder au programme de fidélité.",
+      "features": [
+        "Gestion des commandes",
+        "Mises à jour des actualités en temps réel",
+        "Intégration du programme de fidélité",
+        "Expérience utilisateur fluide (React Native)",
+        "API Backend avec Node.js",
+        "Stockage de données sécurisé avec MongoDB"
+      ]
+    },
+    "ai-journal": {
+      "title": "Journal Interactif IA RAG, Embeddings, Base Vectorielle",
+      "description": "Une application de journal personnel permettant aux utilisateurs d'interagir avec leurs entrées passées via une IA. Chaque entrée est vectorisée et stockée dans Pinecone.",
+      "features": [
+        "Vectorisation pour la compréhension sémantique",
+        "Base de données vectorielle Pinecone",
+        "Intégration LangChain pour les réponses contextuelles",
+        "Qwen LLM pour le traitement du langage naturel",
+        "Architecture full-stack avec frontend Expo et backend NestJS"
+      ]
+    },
+    "gym-assistant": {
+      "title": "Assistant de Gym IA avec MCP",
+      "description": "Une application de fitness propulsée par l'IA qui génère des plans d'entraînement personnalisés en comprenant l'utilisateur au fil du temps via LLaMA 3 et MCP.",
+      "features": [
+        "Intégration MCP enrichissant les prompts de l'IA",
+        "Coaching adaptatif propulsé par l'IA",
+        "Modèle local LLaMA 3 exécuté via LM Studio",
+        "Génération de plans d'entraînement personnalisés",
+        "Coaching basé sur la mémoire s'adaptant à l'utilisateur"
+      ]
+    },
+    "face-verification": {
+      "title": "Système de Vérification Faciale et de Liveness",
+      "description": "Pipeline d'intégration biométrique sécurisée combinant vérification faciale et détection active du vivant pour prévenir la fraude d'identité.",
+      "features": [
+        "Vectorisation FaceNet512 via DeepFace",
+        "Détection du vivant en temps réel via MediaPipe",
+        "Protection anti-usurpation contre les images statiques",
+        "Vérification biométrique en deux étapes",
+        "Frontend React Native avec streaming vidéo en direct"
+      ]
+    },
+    "emsat-platform": {
+      "title": "Plateforme de Simulation d'Examen EMSAT",
+      "description": "Une plateforme e-learning full-stack complète simulant l'environnement de l'examen standardisé EMSAT.",
+      "features": [
+        "Moteur de simulation d'examen en temps réel",
+        "Système de questions dynamique et Glisser-Déposer",
+        "Tableau de bord étudiant avancé",
+        "Architecture de microservices avec Docker",
+        "Design réactif sur tous les appareils"
+      ]
+    },
+    "general-disease-prediction": {
+      "title": "Plateforme IA de Prédiction Multi-Maladies",
+      "description": "Application web de santé spécialisée utilisant un ensemble de modèles d'apprentissage automatique pour l'évaluation des risques à un stade précoce.",
+      "features": [
+        "Architecture ML avec un panel de 5 modèles",
+        "Dépistage des maladies critiques (Cardiaques, Diabète, etc.)",
+        "Prédiction basée sur les symptômes pour 50+ maladies",
+        "Interface interactive avec Streamlit",
+        "Scores de probabilité pour l'analyse des risques médicaux"
+      ]
+    },
+    "gitlab-ci-pipeline": {
+      "title": "Architecture CI/CD Cloud-Native",
+      "description": "Un pipeline d'intégration et de déploiement continus 100% basé sur le cloud pour les applications de santé à haute disponibilité.",
+      "features": [
+        "Pipeline complet en 6 étapes",
+        "Intégration SonarCloud pour les tests de sécurité",
+        "Gestion automatisée des artefacts",
+        "Déploiement Cloud-Native",
+        "Infrastructure évolutive pour les flux de travail automatisés"
+      ]
+    },
+    "mean-ecommerce": {
+      "title": "Architecture de Place de Marché Digitale Full-Stack",
+      "description": "Un écosystème e-commerce haute performance basé sur la stack MEAN offrant une expérience d'achat fluide.",
+      "features": [
+        "Architecture de bout en bout de la stack MEAN",
+        "Gestion avancée des produits et inventaires",
+        "Système de profil et authentification sécurisés",
+        "Interface frontend optimisée et responsive",
+        "Pipeline de traitement des commandes intégré"
+      ]
+    }
+  },
+  "ChatWidget": {
+    "header_title": "Clone IA",
+    "header_status": "En ligne",
+    "input_placeholder": "Demandez-moi ...",
+    "popular_questions_title": "Questions Populaires :",
+    "sources_title": "Sources",
+    "welcome_assistant": "Assistant",
+    "welcome_title": "Voici Firas IA.",
+    "welcome_subtitle": "Une IA entraînée sur mon expérience, mes compétences et mon parcours. Demandez-moi des infos sur mon CV, LinkedIn, mes projets ou des conseils de vie.",
+    "based_on_source": "Basé sur {count} source(s)"
+  }
+}

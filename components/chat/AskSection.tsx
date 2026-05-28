@@ -3,8 +3,10 @@
 import { useState, useCallback, type KeyboardEvent } from "react";
 import { Send } from "lucide-react";
 import { useChat } from "./ChatContext";
+import { useTranslations } from "next-intl";
 
 export const AskSection = () => {
+    const t = useTranslations("AskSection");
     const [input, setInput] = useState("");
     const { sendMessage, isStreaming } = useChat();
 
@@ -34,10 +36,10 @@ export const AskSection = () => {
             <div className="max-w-4xl mx-auto text-center space-y-8">
                 <div className="space-y-4">
                     <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                        Meet My <span className="text-cyan-400">AI Clone</span>
+                        {t("title")}
                     </h2>
                     <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                        I’ve built a Retrieval-Augmented Generation (RAG) system using my personal data. It’s fully aware of my experience, skills, and background. Ask it anything, and it will provide accurate insights tailored to me!
+                        {t("description")}
                     </p>
                 </div>
 
@@ -48,7 +50,7 @@ export const AskSection = () => {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            placeholder="e.g. What is Firas's tech stack?"
+                            placeholder={t("placeholder")}
                             disabled={isStreaming}
                             className="flex-1 bg-transparent text-base text-white placeholder-zinc-500 focus:outline-none disabled:opacity-50"
                         />

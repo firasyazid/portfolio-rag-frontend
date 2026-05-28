@@ -3,8 +3,10 @@
 import { useState, useCallback, type KeyboardEvent } from "react";
 import { Send } from "lucide-react";
 import { useChat } from "./ChatContext";
+import { useTranslations } from "next-intl";
 
 export const ChatInput = () => {
+    const t = useTranslations("ChatWidget");
     const [input, setInput] = useState("");
     const { sendMessage, isStreaming } = useChat();
 
@@ -31,7 +33,7 @@ export const ChatInput = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Type a message..."
+                placeholder={t("input_placeholder")}
                 disabled={isStreaming}
                 className="flex-1 bg-transparent text-sm text-white placeholder-zinc-500 focus:outline-none disabled:opacity-50"
                 autoFocus

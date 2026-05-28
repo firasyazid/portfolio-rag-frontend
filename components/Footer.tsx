@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
-    const [showCVMenu, setShowCVMenu] = useState(false);
+     const [showCVMenu, setShowCVMenu] = useState(false);
+    const t = useTranslations("Footer");
 
     return (
         <footer className="relative z-10 border-t border-white/10">
@@ -26,7 +27,7 @@ export default function Footer() {
                             />
                         </div>
                         <p className="text-white/60 text-sm md:text-base font-light italic">
-                            How can learning stop, when technology never does?
+                            {t('quote')}
                         </p>
                     </div>
 
@@ -163,7 +164,7 @@ export default function Footer() {
                         Built by{" "}
                         <span className="text-white/60 font-medium">Firas Yazid</span>
                     </p>
-                    <p>© {currentYear} All rights reserved</p>
+                    <p>© 2025 All rights reserved</p>
                 </div>
             </div>
         </footer>

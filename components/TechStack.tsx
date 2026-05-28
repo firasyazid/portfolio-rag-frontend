@@ -3,6 +3,7 @@
 import { SiPython, SiReact, SiNodedotjs, SiNextdotjs, SiTypescript, SiMongodb, SiPostgresql, SiDocker, SiFastapi, SiRedis, SiTailwindcss } from "react-icons/si";
 import { TbBrain, TbLink, TbBrandMeta } from "react-icons/tb";
 import { IconType } from "react-icons";
+import { useTranslations } from "next-intl";
 
 interface Tech {
     name: string;
@@ -30,14 +31,16 @@ const techs: Tech[] = [
 const allTechs = [...techs, ...techs];
 
 export default function TechStack() {
+    const t = useTranslations("TechStack");
+
     return (
         <section className="px-4 md:px-6 py-20 md:py-32 relative z-10 overflow-hidden" id="techstack">
             <div className="max-w-7xl mx-auto mb-16">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 text-cyan-300 tracking-tight">
-                    Tech Stack
+                    {t('title')}
                 </h2>
                 <p className="text-white/70 text-base md:text-lg font-light">
-                    Technologies and tools I work with to build modern applications
+                    {t('subtitle')}
                 </p>
             </div>
 

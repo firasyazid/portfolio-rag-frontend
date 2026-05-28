@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { ChatWidget, ChatProvider } from "@/components/chat";
 import InitialLoader from "@/components/InitialLoader";
 import { Analytics } from "@vercel/analytics/react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,10 +22,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://firasyazid.me"),
   title: {
-    default: "Firas Yazid | Full Stack Engineer",
+    default: "Firas Yazid | Full-Stack Developer & AI Engineer | React, Next.js, Python",
     template: "%s | Firas Yazid",
   },
-  description: "Firas Yazid is a Full Stack  Engineer bridging the gap between AI innovation and Software excellence.",
+  description: "Firas Yazid is a Full Stack Engineer bridging the gap between AI innovation and Software excellence.",
   keywords: [
     "Firas Yazid",
     "Full Stack AI Engineer",
@@ -105,13 +109,26 @@ const jsonLd = {
   description: "Firas Yazid is a Full Stack Engineer bridging the gap between AI innovation and Software excellence.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  // Await the routing params in Next.js 15
+  const { locale } = await params;
+
+  // Validate that the incoming `locale` parameter is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Providing all messages to the client side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
@@ -121,13 +138,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <InitialLoader>
-          <ChatProvider>
-            {children}
-            <ChatWidget />
-          </ChatProvider>
-        </InitialLoader>
-        <Analytics />
+        <NextIntlClientProvider messages={messages}>
+          <InitialLoader>
+            <ChatProvider>
+              {children}
+              <ChatWidget />
+            </ChatProvider>
+          </InitialLoader>
+          <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
