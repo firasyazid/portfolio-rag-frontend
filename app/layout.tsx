@@ -16,8 +16,70 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Firas Yazid - Full Stack AI Engineer",
-  description: "Where AI innovation meets Software excellence.",
+  metadataBase: new URL("https://firasyazid.me"),
+  title: {
+    default: "Firas Yazid | Full Stack  Engineer",
+    template: "%s | Firas Yazid",
+  },
+  description: "Firas Yazid is a Full Stack  Engineer bridging the gap between AI innovation and Software excellence.",
+  keywords: [
+    "Firas Yazid",
+    "Full Stack AI Engineer",
+    "Ingénieur Full Stack IA",
+    "Software Engineer",
+    "Développeur Logiciel",
+    "AI Developer",
+    "Développeur IA",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "RAG",
+    "Large Language Models",
+    "Portfolio",
+    "Remote",
+    "Télétravail",
+    "Open to relocation",
+    "Ouvert à la relocalisation",
+    "Mobilité géographique"
+  ],
+  openGraph: {
+    title: "Firas Yazid | Full Stack AI Engineer",
+    description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
+    url: "https://firasyazid.me",
+    siteName: "Firas Yazid Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Firas Yazid | Full Stack AI Engineer",
+    description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+// JSON-LD Structured Data for Google Rich Results
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Firas Yazid",
+  jobTitle: "Full Stack AI Engineer",
+  url: "https://firasyazid.me",
+  sameAs: [
+     "https://www.linkedin.com/in/firas-yazid-32a499222/", // Update this with your actual LinkedIn link if different
+  ],
+  knowsAbout: ["React", "Next.js", "TypeScript", "Artificial Intelligence", "Large Language Models", "Full Stack Development"],
+  description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
 };
 
 export default function RootLayout({
@@ -27,6 +89,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
