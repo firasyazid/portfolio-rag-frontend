@@ -179,7 +179,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-white mb-6">About Me</h3>
                   <div className="bg-zinc-800/40 border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-500/40 transition-colors">
                     <p className="text-base md:text-lg text-white/80 leading-relaxed font-light">
-                      Software Engineer with 3 years of experience in full-stack development. Experienced in building scalable web & mobile applications using modern frameworks like React, Angular, React Native, and FastAPI. Strong DevOps mindset with containerization expertise (Docker) and CI/CD pipeline implementation. Passionate about integrating cutting-edge AI technologies including LLMs, RAG systems, and Model Context Protocol (MCP) into real-world applications.
+                      Software Engineer with 3+ years of experience in full-stack development. Experienced in building scalable web & mobile applications using modern frameworks like React, Angular, React Native, and FastAPI. Strong DevOps mindset with containerization expertise (Docker) and CI/CD pipeline implementation. Passionate about integrating cutting-edge AI technologies including LLMs, RAG systems, and Model Context Protocol (MCP) into real-world applications.
                     </p>
                   </div>
                 </div>

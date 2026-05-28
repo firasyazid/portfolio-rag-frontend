@@ -72,6 +72,11 @@ export const metadata: Metadata = {
     title: "Firas Yazid | Full Stack AI Engineer",
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -93,7 +98,8 @@ const jsonLd = {
   jobTitle: "Full Stack AI Engineer",
   url: "https://firasyazid.me",
   sameAs: [
-     "https://www.linkedin.com/in/firas-yazid-32a499222/", // Update this with your actual LinkedIn link if different
+    "https://www.linkedin.com/in/firas-yazid-32a499222/",
+    "https://github.com/firasyazid"
   ],
   knowsAbout: ["React", "Next.js", "TypeScript", "Artificial Intelligence", "Large Language Models", "Full Stack Development"],
   description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
