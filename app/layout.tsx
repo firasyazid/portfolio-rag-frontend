@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ChatWidget, ChatProvider } from "@/components/chat";
 import InitialLoader from "@/components/InitialLoader";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
             <ChatWidget />
           </ChatProvider>
         </InitialLoader>
+        <Analytics />
       </body>
     </html>
   );
