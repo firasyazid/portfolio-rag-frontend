@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   keywords: [
     "Firas Yazid",
     "Full Stack AI Engineer",
+    "Software Engineer in Full-Stack & AI",
     "Ingénieur Full Stack IA",
     "Software Engineer",
     "Développeur Logiciel",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     "International"
   ],
   openGraph: {
-    title: "Firas Yazid | Full Stack AI Engineer",
+    title: "Firas Yazid | Software Engineer in Full-Stack & AI",
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
     url: "https://firasyazid.me",
     siteName: "Firas Yazid Portfolio",
