@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://firasyazid.me"),
   title: {
-    default: "Firas Yazid | Full Stack  Engineer",
+    default: "Firas Yazid | Full Stack Engineer",
     template: "%s | Firas Yazid",
   },
   description: "Firas Yazid is a Full Stack  Engineer bridging the gap between AI innovation and Software excellence.",
@@ -95,14 +95,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Firas Yazid",
-  jobTitle: "Full Stack AI Engineer",
+  jobTitle: "Full Stack Engineer",
   url: "https://firasyazid.me",
   sameAs: [
     "https://www.linkedin.com/in/firas-yazid-32a499222/",
     "https://github.com/firasyazid"
   ],
   knowsAbout: ["React", "Next.js", "TypeScript", "Artificial Intelligence", "Large Language Models", "Full Stack Development"],
-  description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
+  description: "Firas Yazid is a Full Stack Engineer bridging the gap between AI innovation and Software excellence.",
 };
 
 export default function RootLayout({
