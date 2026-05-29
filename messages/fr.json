@@ -307,7 +307,7 @@
     "sources_title": "Sources",
     "welcome_assistant": "Assistant",
     "welcome_title": "Voici Firas IA.",
-    "welcome_subtitle": "Une IA entraînée sur mon expérience, mes compétences et mon parcours. Demandez-moi des infos sur mon CV, LinkedIn, mes projets ou des conseils de vie.",
+    "welcome_subtitle": "Une IA ayant accès à mon parcours professionnel, mes compétences et mon expérience. Posez-moi des questions sur mon CV, LinkedIn, mes projets ou même des conseils de vie.",
     "based_on_source": "Basé sur {count} source(s)"
   }
 }

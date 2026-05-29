@@ -307,7 +307,7 @@
     "sources_title": "Sources",
     "welcome_assistant": "Assistant",
     "welcome_title": "This is Firas AI.",
-    "welcome_subtitle": "An AI trained on my experience, skills, and journey. Ask about my CV, LinkedIn, projects, or life advice.",
+    "welcome_subtitle": "An AI assistant with access to my professional background, skills, and journey. Ask about my CV, LinkedIn, projects, or even life advice.",
     "based_on_source": "Based on {count} source(s)"
   }
 }
