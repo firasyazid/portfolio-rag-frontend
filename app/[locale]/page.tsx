@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
 import Footer from "@/components/Footer";
 import { AskSection } from "@/components/chat";
+import Card from "@/components/Card";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Projects />
       <AskSection />
+      <Card />
       <TechStack />
       <Footer />
 
