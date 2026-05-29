@@ -1,5 +1,10 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 
 const Card = () => {
+  const t = useTranslations("SystemStatus");
+
   return (
     <section className="py-24 px-6 relative z-10 overflow-hidden">
       {/* Background Glow */}
@@ -10,10 +15,10 @@ const Card = () => {
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-            System Status
+            {t("title")}
           </h2>
           <p className="text-zinc-500 text-sm mt-2 font-light">
-            Real-time health monitoring of core services
+            {t("subtitle")}
           </p>
         </div>
         
@@ -28,15 +33,15 @@ const Card = () => {
           </div>
           <div className="space-y-2 text-sm md:text-base">
             <p className="text-green-400">
-              <span className="text-blue-400">firas-ai</span>
+              <span className="text-blue-400">firas-portfolio</span>
               <span className="text-gray-400">:</span>
               <span className="text-purple-400">~</span>
               <span className="text-white">$</span> docker-compose ps
             </p>
             <div className="grid grid-cols-3 gap-4 text-zinc-400 border-b border-white/5 pb-1 mb-1">
-              <span>NAME</span>
-              <span>STATUS</span>
-              <span>PORT</span>
+              <span>{t("name_column")}</span>
+              <span>{t("status_column")}</span>
+              <span>{t("port_column")}</span>
             </div>
             <div className="space-y-1">
               <div className="grid grid-cols-3 gap-4">
@@ -61,7 +66,7 @@ const Card = () => {
               </div>
             </div>
             <p className="flex items-center pt-2">
-              <span className="text-blue-400">firas-ai</span>
+              <span className="text-blue-400">firas-portfolio</span>
               <span className="text-gray-400">:</span>
               <span className="text-purple-400">~</span>
               <span className="text-white">$</span>
@@ -75,3 +80,4 @@ const Card = () => {
 }
 
 export default Card;
+

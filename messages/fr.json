@@ -309,5 +309,12 @@
     "welcome_title": "Voici Firas IA.",
     "welcome_subtitle": "Une IA ayant accès à mon parcours professionnel, mes compétences et mon expérience. Posez-moi des questions sur mon CV, LinkedIn ou mes projets.",
     "based_on_source": "Basé sur {count} source(s)"
+  },
+  "SystemStatus": {
+    "title": "État du Système",
+    "subtitle": "Surveillance en temps réel des services principaux",
+    "name_column": "NOM",
+    "status_column": "ÉTAT",
+    "port_column": "PORT"
   }
 }
