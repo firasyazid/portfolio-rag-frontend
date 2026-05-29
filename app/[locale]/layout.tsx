@@ -78,8 +78,10 @@ export const metadata: Metadata = {
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
   },
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
+    icon: [
+      { url: '/icon.png', size: '612x612', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/icon.png',
   },
   robots: {
