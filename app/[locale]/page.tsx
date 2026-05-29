@@ -17,8 +17,8 @@ export default function Home() {
       <About />
       <Projects />
       <AskSection />
-      <Card />
       <TechStack />
+      <Card />
       <Footer />
 
     </div>
