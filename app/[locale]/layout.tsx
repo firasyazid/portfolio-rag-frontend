@@ -64,6 +64,14 @@ export const metadata: Metadata = {
     "Paris",
     "International"
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/icon.png",
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Firas Yazid | Full-Stack Developer & AI Engineer | React, Next.js, Python",
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
