@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     "International"
   ],
   openGraph: {
-    title: "Firas Yazid | Software Engineer in Full-Stack & AI",
+    title: "Firas Yazid | Full-Stack Developer & AI Engineer | React, Next.js, Python",
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
     url: "https://firasyazid.me",
     siteName: "Firas Yazid Portfolio",
@@ -74,15 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Firas Yazid | Full Stack AI Engineer",
+    title: "Firas Yazid | Full-Stack Developer & AI Engineer | React, Next.js, Python",
     description: "Firas Yazid is a Full Stack AI Engineer bridging the gap between AI innovation and Software excellence.",
-  },
-  icons: {
-    icon: [
-      { url: '/icon.png', sizes: '576x576', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
   },
   robots: {
     index: true,
