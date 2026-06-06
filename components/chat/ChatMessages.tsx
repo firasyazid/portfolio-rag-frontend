@@ -8,13 +8,12 @@ import { useTranslations } from "next-intl";
 
 export const ChatMessages = () => {
     const t = useTranslations("ChatWidget");
-    const { messages } = useChat();
+    const { messages, isStreaming } = useChat();
     const bottomRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const isUserScrollingRef = useRef(false);
     const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    // Detect user scrolling
     useEffect(() => {
         const container = scrollContainerRef.current;
         if (!container) return;
@@ -22,33 +21,35 @@ export const ChatMessages = () => {
         const handleScroll = () => {
             const { scrollTop, scrollHeight, clientHeight } = container;
             const isAtBottom = scrollHeight - scrollTop - clientHeight < 100;
-            
+
             isUserScrollingRef.current = !isAtBottom;
-            
+
             if (scrollTimeoutRef.current) {
                 clearTimeout(scrollTimeoutRef.current);
             }
-            
+
             scrollTimeoutRef.current = setTimeout(() => {
                 isUserScrollingRef.current = false;
             }, 1000);
         };
 
-        container.addEventListener('scroll', handleScroll, { passive: true });
+        container.addEventListener("scroll", handleScroll, { passive: true });
         return () => {
-            container.removeEventListener('scroll', handleScroll);
+            container.removeEventListener("scroll", handleScroll);
             if (scrollTimeoutRef.current) {
                 clearTimeout(scrollTimeoutRef.current);
             }
         };
     }, []);
 
-    // Auto-scroll only if user isn't manually scrolling
     useEffect(() => {
         if (!isUserScrollingRef.current) {
-            bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+            bottomRef.current?.scrollIntoView({
+                behavior: isStreaming ? "auto" : "smooth",
+                block: "end",
+            });
         }
-    }, [messages]);
+    }, [messages, isStreaming]);
 
     if (messages.length === 0) {
         return (
@@ -73,10 +74,9 @@ export const ChatMessages = () => {
     }
 
     return (
-        <div 
+        <div
             ref={scrollContainerRef}
             className="flex-1 overflow-y-auto px-4 py-6 space-y-6 scrollbar-thin"
-            style={{ scrollBehavior: 'smooth' }}
         >
             {messages.map((message) => (
                 <ChatMessage key={message.id} message={message} />

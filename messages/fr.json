@@ -308,7 +308,11 @@
     "welcome_assistant": "Assistant",
     "welcome_title": "Voici Firas IA.",
     "welcome_subtitle": "Une IA ayant accès à mon parcours professionnel, mes compétences et mon expérience. Posez-moi des questions sur mon CV, LinkedIn ou mes projets.",
-    "based_on_source": "Basé sur {count} source(s)"
+    "clear_conversation": "Effacer la conversation",
+    "clear_confirm_title": "Effacer la conversation ?",
+    "clear_confirm_message": "Cela supprimera votre historique de chat de ce navigateur. Cette action est irréversible.",
+    "clear_confirm_action": "Effacer",
+    "clear_cancel": "Annuler"
   },
   "SystemStatus": {
     "title": "État du Système",

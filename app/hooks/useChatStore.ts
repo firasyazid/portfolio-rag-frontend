@@ -1,7 +1,12 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useLayoutEffect, useEffect } from "react";
 import { ChatService, type Source } from "@/app/services/chatService";
+import {
+    loadMessages,
+    saveMessages,
+    clearStoredMessages,
+} from "@/app/services/chatStorage";
 import type { Message, ChatStore } from "@/app/types/chat";
 
 const generateId = () => Math.random().toString(36).substring(2, 15);
@@ -11,7 +16,29 @@ export const useChatStore = (): ChatStore => {
     const [isOpen, setIsOpen] = useState(false);
     const [isStreaming, setIsStreaming] = useState(false);
     const [hasInteracted, setHasInteracted] = useState(false);
-    const updateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const [isHydrated, setIsHydrated] = useState(false);
+    const rafIdRef = useRef<number | null>(null);
+
+    useLayoutEffect(() => {
+        const stored = loadMessages();
+        if (stored.length > 0) {
+            setMessages(stored);
+            setHasInteracted(true);
+        }
+        setIsHydrated(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isHydrated) return;
+        saveMessages(messages);
+    }, [messages, isHydrated]);
+
+    const cancelScheduledFlush = useCallback(() => {
+        if (rafIdRef.current !== null) {
+            cancelAnimationFrame(rafIdRef.current);
+            rafIdRef.current = null;
+        }
+    }, []);
 
     const sendMessage = useCallback(async (content: string) => {
         if (!content.trim() || isStreaming) return;
@@ -41,56 +68,55 @@ export const useChatStore = (): ChatStore => {
         let accumulatedContent = "";
         let sources: Source[] = [];
         let chunkBuffer = "";
+        let hasFlushedFirstChunk = false;
 
         const flushBuffer = () => {
-            if (chunkBuffer) {
-                accumulatedContent += chunkBuffer;
-                const contentToUpdate = accumulatedContent;
-                chunkBuffer = "";
+            cancelScheduledFlush();
+            if (!chunkBuffer) return;
 
-                setMessages((prev) =>
-                    prev.map((msg) =>
-                        msg.id === assistantMessageId
-                            ? { ...msg, content: contentToUpdate }
-                            : msg
-                    )
-                );
-            }
+            accumulatedContent += chunkBuffer;
+            const contentToUpdate = accumulatedContent;
+            chunkBuffer = "";
+
+            setMessages((prev) =>
+                prev.map((msg) =>
+                    msg.id === assistantMessageId
+                        ? { ...msg, content: contentToUpdate }
+                        : msg
+                )
+            );
+        };
+
+        const scheduleFlush = () => {
+            if (rafIdRef.current !== null) return;
+            rafIdRef.current = requestAnimationFrame(() => {
+                rafIdRef.current = null;
+                flushBuffer();
+            });
         };
 
         try {
             let hasReceivedAnyData = false;
-            
+
             for await (const event of ChatService.streamChat(content)) {
                 hasReceivedAnyData = true;
-                
+
                 switch (event.type) {
                     case "sources":
                         sources = event.sources;
-                        
                         break;
                     case "chunk":
                         chunkBuffer += event.content;
 
-                        // Batch updates: flush every 50ms or when buffer reaches certain size
-                        if (updateTimeoutRef.current) {
-                            clearTimeout(updateTimeoutRef.current);
-                        }
-
-                        if (chunkBuffer.length > 20) {
+                        if (!hasFlushedFirstChunk) {
+                            hasFlushedFirstChunk = true;
                             flushBuffer();
                         } else {
-                            updateTimeoutRef.current = setTimeout(flushBuffer, 50);
+                            scheduleFlush();
                         }
                         break;
                     case "done":
-                        console.log("Stream completed successfully");
-                        // Flush any remaining content
-                        if (updateTimeoutRef.current) {
-                            clearTimeout(updateTimeoutRef.current);
-                        }
                         flushBuffer();
-
                         setMessages((prev) =>
                             prev.map((msg) =>
                                 msg.id === assistantMessageId
@@ -100,10 +126,7 @@ export const useChatStore = (): ChatStore => {
                         );
                         break;
                     case "error":
-                        console.error("Stream error event:", event.message);
-                        if (updateTimeoutRef.current) {
-                            clearTimeout(updateTimeoutRef.current);
-                        }
+                        cancelScheduledFlush();
                         setMessages((prev) =>
                             prev.map((msg) =>
                                 msg.id === assistantMessageId
@@ -118,57 +141,52 @@ export const useChatStore = (): ChatStore => {
                         break;
                 }
             }
-            
-            // If stream ended without receiving data or done event, mark as complete
+
             if (!hasReceivedAnyData || accumulatedContent === "") {
-                console.warn("Stream ended without data");
-                if (updateTimeoutRef.current) {
-                    clearTimeout(updateTimeoutRef.current);
-                }
                 flushBuffer();
                 setMessages((prev) =>
                     prev.map((msg) =>
                         msg.id === assistantMessageId
-                            ? { 
-                                ...msg, 
+                            ? {
+                                ...msg,
                                 content: accumulatedContent || "No response received. Please try again.",
-                                isStreaming: false, 
-                                sources 
+                                isStreaming: false,
+                                sources,
                             }
                             : msg
                     )
                 );
             }
         } catch (error) {
-            console.error("Chat error:", error);
-            if (updateTimeoutRef.current) {
-                clearTimeout(updateTimeoutRef.current);
-            }
+            cancelScheduledFlush();
             setMessages((prev) =>
                 prev.map((msg) =>
                     msg.id === assistantMessageId
-                        ? { 
-                            ...msg, 
-                            content: error instanceof Error 
-                                ? `Connection error: ${error.message}` 
-                                : "Connection error. Please try again.", 
-                            isStreaming: false 
+                        ? {
+                            ...msg,
+                            content: error instanceof Error
+                                ? `Connection error: ${error.message}`
+                                : "Connection error. Please try again.",
+                            isStreaming: false,
                         }
                         : msg
                 )
             );
         } finally {
+            cancelScheduledFlush();
             setIsStreaming(false);
         }
-    }, [isStreaming]);
+    }, [isStreaming, cancelScheduledFlush]);
 
     const togglePanel = useCallback(() => setIsOpen((prev) => !prev), []);
     const openPanel = useCallback(() => setIsOpen(true), []);
     const closePanel = useCallback(() => setIsOpen(false), []);
     const clearConversation = useCallback(() => {
+        cancelScheduledFlush();
         setMessages([]);
         setHasInteracted(false);
-    }, []);
+        clearStoredMessages();
+    }, [cancelScheduledFlush]);
 
     return {
         messages,
