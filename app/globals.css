@@ -36,6 +36,21 @@ body {
   animation: gradient 8s ease infinite;
 }
 
+.chat-safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.chat-safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-only {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* Custom Scrollbar Styling */
 .scrollbar-thin {
   scrollbar-width: thin;

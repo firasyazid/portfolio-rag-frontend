@@ -22,8 +22,8 @@
     "tab_skills": "Skills",
     "profile_title": "Profile",
     "about_title": "About Me",
-    "about_text_1": "Hello! I'm an innovative Full Stack Engineer bridging the gap between Software excellence and AI innovation.",
-    "about_text_2": "I excel in building scalable AI-powered web and mobile applications.",
+    "about_text_1": "Full-stack AI Engineer who builds across the AI stack: RAG systems, ML models, and the agentic architectures that put them into production.",
+    "about_text_2": "3+ years shipping AI-driven features — plus solid experience in mobile development from design to production.",
     "experience_title": "Professional Experience",
     "education_title": "Education",
     "certifications_title": "Certifications",
@@ -56,7 +56,7 @@
     "placeholder": "e.g. What is Firas's tech stack?"
   },
   "AboutData": {
-    "about_text": "Software Engineer with 3+ years of experience in full-stack development. Experienced in building scalable web & mobile applications using modern frameworks like React, Angular, React Native, and FastAPI. Strong DevOps mindset with containerization expertise (Docker) and CI/CD pipeline implementation. Passionate about integrating cutting-edge AI technologies including LLMs, RAG systems, and Model Context Protocol (MCP) into real-world applications.",
+    "about_text": "Full-stack AI Engineer who builds across the AI stack: RAG systems, ML models, and the agentic architectures that put them into production. 3+ years shipping AI-driven features, from custom retrieval pipelines and trained prediction models to MCP-integrated agents across healthcare, education, and recruitment platforms — with solid experience in mobile development from design to production.",
     "experiences": [
       {
         "date": "Jan 2025 – Present",
@@ -147,6 +147,28 @@
         "Fully async backend architecture powered by FastAPI",
         "Modern, responsive frontend built with Next.js 15",
         "Context-aware AI utilizing Qwen2.5 via HuggingFace"
+      ]
+    },
+    "generative-ui-restaurant-agent": {
+      "title": "Generative UI Restaurant Agent — CopilotKit AG-UI · Mastra · React Native",
+      "description": "React Native app: an AI agent recommends dishes from a filtered menu and renders native dish cards inline in chat — not text lists. Allergies and diet are enforced before context reaches the model.",
+      "features": [
+        "Profile-aware flow: allergies and diet applied before the agent sees the menu",
+        "Message → profile → filtered menu → picks → native dish cards in chat",
+        "Generative UI via AG-UI tool calls from the model",
+        "Architectural menu filtering, not prompt-only rules",
+        "CopilotKit AG-UI, Mastra, DeepSeek Flash 4 (OpenRouter), Expo, LibSQL"
+      ]
+    },
+    "agentic-gen-ui-chat": {
+      "title": "Agentic Gen UI Chat — Mastra, AG-UI & MCP",
+      "description": "AI chat connected to Slack & Jira that generates dynamic UI components in real time — task boards, blocker cards, timelines — grounded in live workspace data.",
+      "features": [
+        "Each answer is a generated UI component, not plain text",
+        "Mastra agent with custom tools over Slack & Jira",
+        "AG-UI links the agentic backend to the live Next.js app",
+        "Interfaces matched to the question: boards, blockers, timelines",
+        "Next.js, Vercel AI SDK, MCP integrations"
       ]
     },
     "ai-release-manager": {
@@ -302,17 +324,26 @@
   "ChatWidget": {
     "header_title": "AI Clone",
     "header_status": "Online",
-    "input_placeholder": "Ask me anything...",
-    "popular_questions_title": "Popular Questions:",
+    "input_placeholder": "Ask about Firas's background…",
+    "popular_questions_title": "For recruiters:",
     "sources_title": "Sources",
     "welcome_assistant": "Assistant",
     "welcome_title": "This is Firas AI.",
-    "welcome_subtitle": "An AI assistant with access to my professional background, skills, and journey. Ask about my CV, LinkedIn, or projects.",
+    "welcome_subtitle": "Screen a candidate faster: ask about Firas's experience, stack, projects, and role fit. Answers are grounded in his CV and portfolio.",
     "clear_conversation": "Clear conversation",
     "clear_confirm_title": "Clear conversation?",
     "clear_confirm_message": "This will delete your chat history from this browser. This action cannot be undone.",
     "clear_confirm_action": "Clear",
-    "clear_cancel": "Cancel"
+    "clear_cancel": "Cancel",
+    "thinking_label": "Thinking…",
+    "scroll_to_bottom": "Jump to latest",
+    "close_chat": "Close chat",
+    "send_message": "Send message",
+    "suggestions": [
+      "What are Firas's core technical strengths?",
+      "Summarize Firas's experience for a senior full-stack role",
+      "Does Firas have experience with mobile development, and which stacks has he used?"
+    ]
   },
   "SystemStatus": {
     "title": "System Status",

@@ -1,10 +1,12 @@
 "use client";
 
 import { memo } from "react";
-import { Sparkles } from "lucide-react";
+import { AssistantAvatarIcon } from "./AssistantAvatarIcon";
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import type { Message } from "@/app/types/chat";
+import { ChatTypingIndicator } from "./ChatTypingIndicator";
+import { isErrorMessage } from "./chatUtils";
 
 interface ChatMessageProps {
     message: Message;
@@ -16,22 +18,20 @@ const markdownComponents: Components = {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+            className="break-all text-cyan-400 underline underline-offset-2 transition-colors hover:text-cyan-300"
         >
             {children}
         </a>
     ),
-    p: ({ children }) => (
-        <p className="mb-2 last:mb-0">{children}</p>
-    ),
+    p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
     ul: ({ children }) => (
-        <ul className="list-disc list-inside space-y-1 my-2">{children}</ul>
+        <ul className="my-2 list-inside list-disc space-y-1">{children}</ul>
     ),
     ol: ({ children }) => (
-        <ol className="list-decimal list-inside space-y-1 my-2">{children}</ol>
+        <ol className="my-2 list-inside list-decimal space-y-1">{children}</ol>
     ),
     code: ({ children }) => (
-        <code className="bg-zinc-800/50 px-1.5 py-0.5 rounded text-cyan-300 text-xs font-mono">
+        <code className="rounded bg-zinc-800/50 px-1.5 py-0.5 font-mono text-xs text-cyan-300 break-words">
             {children}
         </code>
     ),
@@ -39,39 +39,54 @@ const markdownComponents: Components = {
 
 export const ChatMessage = memo(({ message }: ChatMessageProps) => {
     const isUser = message.role === "user";
+    const isError = !isUser && !message.isStreaming && isErrorMessage(message.content);
+    const isWaiting =
+        !isUser && message.isStreaming && message.content.trim().length === 0;
 
     if (isUser) {
         return (
             <div className="flex justify-end">
-                <div className="max-w-[85%] bg-[#1c1f26] text-white px-4 py-3 rounded-2xl rounded-tr-sm text-sm border border-white/5">
-                    {message.content}
+                <div className="max-w-[min(85%,100%)] rounded-2xl rounded-tr-sm border border-white/5 bg-[#1c1f26] px-4 py-3 text-[15px] leading-relaxed text-white md:text-sm">
+                    <p className="whitespace-pre-wrap break-words">{message.content}</p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="flex gap-4">
-            <div className="shrink-0 mt-1">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20">
-                    <Sparkles className="h-4 w-4 text-cyan-400" />
+        <div className="flex gap-3 md:gap-4">
+            <div className="mt-0.5 shrink-0">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-500/20 bg-cyan-500/10">
+                    <AssistantAvatarIcon size="sm" />
                 </div>
             </div>
 
-            <div className="flex-1 min-w-0 space-y-2">
+            <div className="min-w-0 flex-1 space-y-2">
                 <div className="text-sm font-medium text-zinc-400">Firas AI</div>
-                <div className="prose prose-sm prose-invert max-w-none text-zinc-300 leading-relaxed">
-                    {message.isStreaming ? (
-                        <p className="mb-0 whitespace-pre-wrap break-words">
-                            {message.content}
-                            <span className="inline-block w-1.5 h-4 bg-cyan-400 animate-pulse ml-0.5 align-middle" />
-                        </p>
-                    ) : (
-                        <ReactMarkdown components={markdownComponents}>
-                            {message.content}
-                        </ReactMarkdown>
-                    )}
-                </div>
+
+                {isWaiting ? (
+                    <ChatTypingIndicator />
+                ) : (
+                    <div
+                        className={`prose prose-sm prose-invert max-w-none leading-relaxed ${
+                            isError ? "text-red-300/90" : "text-zinc-300"
+                        }`}
+                    >
+                        {message.isStreaming ? (
+                            <p className="mb-0 whitespace-pre-wrap break-words text-[15px] md:text-sm">
+                                {message.content}
+                                <span
+                                    className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-cyan-400 align-middle motion-safe-only"
+                                    aria-hidden="true"
+                                />
+                            </p>
+                        ) : (
+                            <ReactMarkdown components={markdownComponents}>
+                                {message.content}
+                            </ReactMarkdown>
+                        )}
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -22,8 +22,8 @@
     "tab_skills": "Compétences",
     "profile_title": "Profil",
     "about_title": "À propos de moi",
-    "about_text_1": "Bonjour ! Je suis un Ingénieur Full Stack IA innovant, comblant le fossé entre l'excellence logicielle et l'innovation en IA.",
-    "about_text_2": "J'excelle dans la création d'applications web et mobiles évolutives propulsées par l'IA.",
+    "about_text_1": "Ingénieur Full-Stack IA sur toute la stack : systèmes RAG, modèles ML et architectures agentiques en production.",
+    "about_text_2": "Plus de 3 ans à livrer des fonctionnalités IA — et une solide expérience mobile, de la conception à la production.",
     "experience_title": "Expérience Professionnelle",
     "education_title": "Formation",
     "certifications_title": "Certifications",
@@ -56,7 +56,7 @@
     "placeholder": "ex. Quelle est la stack technique de Firas ?"
   },
   "AboutData": {
-    "about_text": "Ingénieur logiciel avec plus de 3 ans d'expérience dans le développement full-stack. Expérimenté dans la création d'applications web et mobiles évolutives à l'aide de frameworks modernes tels que React, Angular, React Native et FastAPI. Forte mentalité DevOps avec une expertise en conteneurisation (Docker) et en mise en oeuvre de pipelines CI/CD. Passionné par l'intégration de technologies d'IA de pointe, notamment les LLMs, les systèmes RAG et le Model Context Protocol (MCP) dans des applications réelles.",
+    "about_text": "Ingénieur Full-Stack IA qui conçoit sur toute la stack IA : systèmes RAG, modèles ML et architectures agentiques en production. Plus de 3 ans à livrer des fonctionnalités pilotées par l'IA, des pipelines de retrieval sur mesure et modèles entraînés aux agents intégrés via MCP dans la santé, l'éducation et le recrutement — avec une solide expérience en développement mobile, de la conception à la mise en production.",
     "experiences": [
       {
         "date": "Jan. 2025 – Présent",
@@ -147,6 +147,28 @@
         "Architecture backend entièrement asynchrone (FastAPI)",
         "Frontend moderne et réactif avec Next.js 15",
         "IA contextuelle utilisant Qwen2.5 via HuggingFace"
+      ]
+    },
+    "generative-ui-restaurant-agent": {
+      "title": "Agent Restaurant Generative UI — CopilotKit AG-UI · Mastra · React Native",
+      "description": "Application React Native : un agent IA recommande des plats depuis un menu filtré et affiche des cartes natives dans le chat — pas de listes texte. Allergies et régime appliqués avant que le modèle ne voie le menu.",
+      "features": [
+        "Profil utilisateur (allergies, régime) appliqué avant le contexte agent",
+        "Message → profil → menu filtré → choix → cartes plats natives dans le chat",
+        "UI générative via appels d'outils AG-UI du modèle",
+        "Filtrage architectural du menu, pas seulement une règle de prompt",
+        "CopilotKit AG-UI, Mastra, DeepSeek Flash 4 (OpenRouter), Expo, LibSQL"
+      ]
+    },
+    "agentic-gen-ui-chat": {
+      "title": "Chat Gen UI Agentique — Mastra, AG-UI & MCP",
+      "description": "Assistant IA connecté à Slack et Jira qui génère des composants UI dynamiques en temps réel — tableaux de tâches, cartes de blocage, timelines — à partir des données du workspace.",
+      "features": [
+        "Chaque réponse est un composant UI généré, pas du texte brut",
+        "Agent Mastra avec outils personnalisés sur Slack & Jira",
+        "AG-UI relie le backend agentique à l'app Next.js en direct",
+        "Interfaces adaptées à la question : boards, blockers, timelines",
+        "Next.js, Vercel AI SDK, intégrations MCP"
       ]
     },
     "ai-release-manager": {
@@ -302,17 +324,26 @@
   "ChatWidget": {
     "header_title": "Clone IA",
     "header_status": "En ligne",
-    "input_placeholder": "Demandez-moi ...",
-    "popular_questions_title": "Questions Populaires :",
+    "input_placeholder": "Posez une question sur le profil de Firas…",
+    "popular_questions_title": "Pour les recruteurs :",
     "sources_title": "Sources",
     "welcome_assistant": "Assistant",
     "welcome_title": "Voici Firas IA.",
-    "welcome_subtitle": "Une IA ayant accès à mon parcours professionnel, mes compétences et mon expérience. Posez-moi des questions sur mon CV, LinkedIn ou mes projets.",
+    "welcome_subtitle": "Pré-sélectionnez plus vite : expérience, stack, projets et adéquation au poste. Les réponses s'appuient sur son CV et son portfolio.",
     "clear_conversation": "Effacer la conversation",
     "clear_confirm_title": "Effacer la conversation ?",
     "clear_confirm_message": "Cela supprimera votre historique de chat de ce navigateur. Cette action est irréversible.",
     "clear_confirm_action": "Effacer",
-    "clear_cancel": "Annuler"
+    "clear_cancel": "Annuler",
+    "thinking_label": "Réflexion…",
+    "scroll_to_bottom": "Aller au dernier message",
+    "close_chat": "Fermer le chat",
+    "send_message": "Envoyer le message",
+    "suggestions": [
+      "Quelles sont les principales compétences techniques de Firas ?",
+      "Résume l'expérience de Firas pour un poste full-stack senior",
+      "Firas a-t-il de l'expérience en développement mobile, et quelles technologies utilise-t-il ?"
+    ]
   },
   "SystemStatus": {
     "title": "État du Système",
